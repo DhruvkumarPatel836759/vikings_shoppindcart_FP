@@ -1,0 +1,90 @@
+var counter = 1;
+setInterval(function () 
+{
+  document.getElementById('radio' + counter).checked = true;
+  counter++;
+  if (counter > 4) 
+  {
+    counter = 1;
+  }
+}, 2000);
+
+
+
+var counter1 = 1;
+setInterval(function () 
+{
+  document.getElementById('radio' + counter1).checked = true;
+  counter1++;
+  if (counter1 > 4) 
+  {
+    counter1 = 1;
+  }
+}, 2000);
+
+
+
+
+
+const name = $("#name").val().trim();
+if (name == "") 
+{
+  $("#name").next().text("This field is required.");
+  isValid = false;
+}
+
+else 
+{
+  $("#name").next().text("");
+}
+
+$("#name").val(name);
+
+
+const menu = document.querySelector(".menu");
+const navOpen = document.querySelector(".hamburger");
+const navClose = document.querySelector(".close");
+
+const navLeft = menu.getBoundingClientRect().left;
+navOpen.addEventListener("click", () => {
+
+  if (navLeft < 0) 
+  {
+    menu.classList.add("show");
+    document.body.classList.add("show");
+    navBar.classList.add("show");
+  }
+});
+
+navClose.addEventListener("click", () => {
+  if (navLeft < 0) 
+  {
+    menu.classList.remove("show");
+    document.body.classList.remove("show");
+    navBar.classList.remove("show");
+  }
+});
+
+// Scroll To
+const links = [...document.querySelectorAll(".scroll-link")];
+links.map(link => {
+  if (!link) return;
+  link.addEventListener("click", e => {
+    e.preventDefault();
+
+    const id = e.target.getAttribute("href").slice(1);
+
+    const element = document.getElementById(id);
+    const fixNav = navBar.classList.contains("fix-nav");
+    let position = element.offsetTop - navHeight;
+
+    window.scrollTo({
+      top: position,
+      left: 0,
+    });
+
+    navBar.classList.remove("show");
+    menu.classList.remove("show");
+    document.body.classList.remove("show");
+  });
+});
