@@ -1138,3 +1138,45 @@ body{
   font-size: 14px;
   transition: all 0.5s ease;
 }
+
+/* (B) PRODUCTS LIST */
+#cart-products {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 10px;
+  padding: 10px;
+}
+.p-item {
+  padding: 10px;
+  border: 1px solid #aaa;
+  text-align: center;
+}
+.p-name {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+.p-img { max-width: 180px; }
+.p-desc {
+  color: #777;
+  font-size: 0.9em;
+  line-height: 1.5em;
+}
+.p-price {
+  font-weight: bold;
+  font-size: 1.1em;
+  margin: 10px 0;
+}
+input.p-add { width: 80%; }
+
+/* Slider1 css  */
+
+.slider1{
+  /* width: 100%; */
+  width: 800px;
+  height: 500px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: auto; 
+  margin-top: 15px;
+}
