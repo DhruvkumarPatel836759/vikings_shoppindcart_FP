@@ -509,6 +509,9 @@
     text-transform: capitalize;
   }
 /* Product */
+.pagination .container li{
+  display: inline-block;
+}
 .product-center {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
